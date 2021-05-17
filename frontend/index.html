@@ -1,0 +1,60 @@
+<!--
+Charlie-WebShell
+Copyright (C) 2021 Charlie999         
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>Terminal Gateway</title>
+  <meta charset="utf-8"/>
+
+  <script src="/js/jsencrypt.min.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/ricmoo/aes-js/e27b99df/index.js"></script>
+ 
+  <script src="/js/xterm.js"></script>
+  <script src="/js/xterm-addon-attach-cust.js"></script>
+  <script src="/js/xterm-addon-fit.js"></script>
+  <script src="/js/xterm-addon-web-link-provider.js"></script>
+  <script src="/js/xterm-addon-web-links.js"></script>
+
+  <script src="/js/encryption.js"></script>
+
+  <script src="/js/anticlose.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.css" integrity="sha512-iLYuqv+v/P4u9erpk+KM83Ioe/l7SEmr7wB6g+Kg1qmEit8EShDKnKtLHlv2QXUp7GGJhmqDI+1PhJYLTsfb8w==" crossorigin="anonymous" />
+  <style>
+    @font-face {
+     font-family: "iso8pcdosx2";
+     src: url("/fonts/Web437_IBM_DOS_ISO8-2x.woff") format('woff');
+    }
+  </style>
+ </head>
+ <body style="background-color:black;">
+  <div id="container" style="width:100%;height:100%;">
+   <div id="terminal" style="height:100px;"></div>
+   <div id="footer" style="color:white;font-family:iso8pcdosx2;position:absolute;bottom:7px;">
+    <span style="color:gray;width=100%;">
+     <span id="status" style="color:red">Disconnected</span> -- Latency: <span id="latency" style="color:gray">N/A</span> -- Terminal size: <span id="termsize"></span>
+    </span>
+   </div>
+  </div>
+  <div style="right:7px;bottom:7px;position:absolute;text-align:right;color:white;font-family:iso8pcdosx2;">
+   <span id="encryption_status" style="color:red">UNENCRYPTED</span>
+  </div>
+  <script src="/js/queue.js"></script>
+  <script src="/js/bottom.js"></script>
+ </body>
+</html>
